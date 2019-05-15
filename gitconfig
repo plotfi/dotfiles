@@ -1,0 +1,13 @@
+[user]
+	name = Puyan Lotfi
+	email = puyan@puyan.org
+[push]
+	default = current
+[color]
+	ui = auto
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	backport = cherry-pick -x
+
+[merge]
+  conflictStyle = diff3
