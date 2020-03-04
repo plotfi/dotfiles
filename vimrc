@@ -29,6 +29,17 @@ set softtabstop=2
 set tabstop=2
 set shiftwidth=2
 
+" If LSP is installed, use it.
+if isdirectory($HOME.'/.vim/plugins/LanguageClient-neovim')
+set runtimepath+=~/.vim/plugins/LanguageClient-neovim
+let g:LanguageClient_serverCommands = {
+    \ 'cpp': ['~/Tools/clang+llvm/bin/clangd'],
+    \ }
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+endif
+
 noremap <C-c> <Esc>
 imap <C-c> <Esc>
 
