@@ -40,17 +40,26 @@ nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 endif
 
+if has('nvim')
+if isdirectory($HOME.'/.vim/plugins/deoplete.nvim/')
+set runtimepath+=~/.vim/plugins/deoplete.nvim/
+let g:deoplete#enable_at_startup = 1
+endif
+endif
+
 noremap <C-c> <Esc>
 imap <C-c> <Esc>
 
 filetype plugin indent on
 
 set mouse=a
+if !has('nvim')
 if has("mouse_sgr")
   set ttymouse=sgr
 else
   set ttymouse=xterm2
 end
+endif
 
 syntax on
 colorscheme muon
