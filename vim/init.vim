@@ -65,7 +65,7 @@ else
   map <C-K> :pyf ~/.vim/plugins/clang-format.py<cr>
 end
 
-" If vim is new enough, and the LCN is cloned, enable clangd code navigation.
+" If vim is new enough, and LanguageClient is cloned then enable it.
 if ((v:version > 750) || has('nvim')) && isdirectory($HOME.'/.vim/plugins/LanguageClient-neovim')
   set runtimepath+=~/.vim/plugins/LanguageClient-neovim
   let g:LanguageClient_serverCommands = {
@@ -77,6 +77,7 @@ if ((v:version > 750) || has('nvim')) && isdirectory($HOME.'/.vim/plugins/Langua
 endif
 
 " If we bothered to install nvim and clone deoplete, enable it.
+" I find auto-complete a little annoying so I keep it out of regular vim.
 if has('nvim') && isdirectory($HOME.'/.vim/plugins/deoplete.nvim/')
   set runtimepath+=~/.vim/plugins/deoplete.nvim/
   let g:deoplete#enable_at_startup = 1
