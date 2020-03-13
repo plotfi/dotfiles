@@ -1,34 +1,47 @@
 filetype off
+
+" Skip vi-compat; draw fast and smooth.
 set nocompatible
-set expandtab
 set lazyredraw
 set ttyfast
-set hlsearch
-set autoindent
-set cindent
-set smartindent
+
+" Autoload file if it changes and skip backups and swapfiles.
 set nobackup
 set nowritebackup
 set noswapfile
 set autoread
-set cursorline
+
+" Display info about lines, columns, modes, search and brace matches.
 set incsearch
+set hlsearch
+set showmatch
+set cursorline
 set showmode
 set number
 set ruler
 set showcmd
-set showmatch
+set colorcolumn=81
+
+" Display white space.
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
-set clipboard=unnamed
+
 set makeprg=ninja
-set colorcolumn=81
+
+" Indent the llvm way.
+set expandtab
+set autoindent
+set cindent
+set smartindent
 set backspace=2
 set laststatus=2
 set softtabstop=2
 set tabstop=2
-set shiftwidth=2  " The one true llvm way.
-set mouse=a       " I am weak.
+set shiftwidth=2
+
+" Integrate with mouse and OS clipboard.
+set mouse=a
+set clipboard=unnamed
 
 " Enable the wide-screen mouse WA if we are on a new enough non-neo vim.
 " Without this, you can't click the far right of a large display in full screen.
