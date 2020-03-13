@@ -26,6 +26,7 @@ set colorcolumn=81
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 
+" Use ninja not make.
 set makeprg=ninja
 
 " Indent the llvm way.
