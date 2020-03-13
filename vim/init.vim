@@ -26,8 +26,9 @@ set colorcolumn=81
 set list
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 
-" Use ninja not make.
+" Use ninja by default, but load a per-project vimrc for a custom makeprg.
 set makeprg=ninja
+set exrc
 
 " Indent the llvm way.
 set expandtab
