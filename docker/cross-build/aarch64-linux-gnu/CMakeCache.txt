@@ -1,6 +1,5 @@
 set(target_triple aarch64-unknown-linux-gnu)
 set(target_dir aarch64-linux-gnu)
-set(STDLIBCXX_VERSION 8)
 set(CMAKE_SYSTEM_NAME Linux CACHE STRING "")
 set(CMAKE_SYSTEM_PROCESSOR aarch64 CACHE STRING "")
 
