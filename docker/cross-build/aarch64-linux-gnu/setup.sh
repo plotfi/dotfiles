@@ -12,18 +12,21 @@ cmake -GNinja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUIL
       -DLLVM_ENABLE_ASSERTIONS=ON -DLLVM_ENABLE_LLD=ON -DLLVM_ENABLE_PROJECTS=all ../llvm-project/llvm
 ninja
 
+ARCH=aarch64-linux-gnu
+VERS=8
+
 cd
-mkdir -p sysroots/aarch64-linux-gnu
-cd sysroots/aarch64-linux-gnu
-wget https://raw.githubusercontent.com/plotfi/dotfiles/master/docker/cross-build/aarch64-linux-gnu/CMakeCache.txt
-cp -r /usr/aarch64-linux-gnu/* .
+mkdir -p sysroots/$ARCH
+cd sysroots/$ARCH
+wget https://raw.githubusercontent.com/plotfi/dotfiles/master/docker/cross-build/$ARCH/CMakeCache.txt
+cp -r /usr/$ARCH/* .
 cd lib/
-cp -r /usr/lib/gcc-cross/aarch64-linux-gnu/8/* .
+cp -r /usr/lib/gcc-cross/$ARCH/$VERS/* .
 mv include/* ../include/
 rmdir include/
 
 cd
 cd test-suite-build
-cmake -DLLVM_BUILT_ROOT=`pwd`/bootstrap -DCMAKE_SYSROOT=`pwd`/sysroots/aarch64-linux-gnu \
-      -C`pwd`/sysroots/aarch64-linux-gnu/CMakeCache.txt -C../test-suite/cmake/caches/O3.cmake  ../llvm-test-suite/
+cmake -DLLVM_BUILT_ROOT=`pwd`/bootstrap -DCMAKE_SYSROOT=`pwd`/sysroots/$ARCH \
+      -C`pwd`/sysroots/$ARCH/CMakeCache.txt -C../test-suite/cmake/caches/O3.cmake  ../llvm-test-suite/
 make -j8
