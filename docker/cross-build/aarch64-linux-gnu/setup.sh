@@ -8,7 +8,8 @@ git clone http://github.com/llvm/llvm-project
 mkdir test-suite-build
 mkdir bootstrap
 cd bootstrap/
-cmake -GNinja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Release -DLLVM_ENABLE_ASSERTIONS=ON -DLLVM_ENABLE_LLD=ON -DLLVM_ENABLE_PROJECTS=all ../llvm-project/llvm
+cmake -GNinja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Release \
+      -DLLVM_ENABLE_ASSERTIONS=ON -DLLVM_ENABLE_LLD=ON -DLLVM_ENABLE_PROJECTS=all ../llvm-project/llvm
 ninja
 
 cd
@@ -22,5 +23,6 @@ rmdir include/
 
 cd
 cd test-suite-build
-cmake -DLLVM_BUILT_ROOT=`pwd`/bootstrap -DCMAKE_SYSROOT=`pwd`/sysroots/aarch64-linux-gnu -C`pwd`/sysroots/aarch64-linux-gnu/CMakeCache.txt -C../test-suite/cmake/caches/O3.cmake  ../llvm-test-suite/
+cmake -DLLVM_BUILT_ROOT=`pwd`/bootstrap -DCMAKE_SYSROOT=`pwd`/sysroots/aarch64-linux-gnu \
+      -C`pwd`/sysroots/aarch64-linux-gnu/CMakeCache.txt -C../test-suite/cmake/caches/O3.cmake  ../llvm-test-suite/
 make -j8
