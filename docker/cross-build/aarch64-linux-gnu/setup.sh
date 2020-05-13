@@ -29,7 +29,6 @@ mv include/* ../include/
 rmdir include/
 
 cd
-cd test-suite-build
-cmake -DLLVM_BUILT_ROOT=../bootstrap -DCMAKE_SYSROOT=../sysroots/$ARCH -DSTDLIBCXX_VERSION=8 \
-      -C../sysroots/$ARCH/CMakeCache.txt -C../test-suite/cmake/caches/O3.cmake  ../llvm-test-suite/
+cmake -B./test-suite-build -DLLVM_BUILT_ROOT=`pwd`/bootstrap -DCMAKE_SYSROOT=`pwd`/sysroots/$ARCH -DSTDLIBCXX_VERSION=8 \
+      -C`pwd`/sysroots/$ARCH/CMakeCache.txt -C`pwd`/test-suite/cmake/caches/O3.cmake  `pwd`/llvm-test-suite/
 make -j8
