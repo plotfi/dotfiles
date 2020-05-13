@@ -31,5 +31,5 @@ rmdir include/
 cd
 cd test-suite-build
 cmake -DLLVM_BUILT_ROOT=../bootstrap -DCMAKE_SYSROOT=../sysroots/$ARCH -DSTDLIBCXX_VERSION=8 \
-      -C`pwd`/sysroots/$ARCH/CMakeCache.txt -C../test-suite/cmake/caches/O3.cmake  ../llvm-test-suite/
+      -C../sysroots/$ARCH/CMakeCache.txt -C../test-suite/cmake/caches/O3.cmake  ../llvm-test-suite/
 make -j8
