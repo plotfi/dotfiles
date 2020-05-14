@@ -22,9 +22,9 @@ cd
 mkdir -p sysroots/$ARCH
 cd sysroots/$ARCH
 wget https://raw.githubusercontent.com/plotfi/dotfiles/master/docker/cross-build/$ARCH/CMakeCache.txt
-cp -r /usr/$ARCH/* .
+cp -r -L /usr/$ARCH/* .
 cd lib/
-cp -r /usr/lib/gcc-cross/$ARCH/$VERS/* .
+cp -r -L /usr/lib/gcc-cross/$ARCH/$VERS/* .
 mv include/* ../include/
 rmdir include/
 
