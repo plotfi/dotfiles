@@ -84,7 +84,7 @@ end
 if ((v:version > 750) || has('nvim')) && isdirectory($HOME.'/.vim/plugins/LanguageClient-neovim')
   set runtimepath+=~/.vim/plugins/LanguageClient-neovim
   let g:LanguageClient_serverCommands = {
-      \ 'cpp': ['~/Tools/clang+llvm/bin/clangd'],
+      \ 'cpp': ['clangd'],
       \ }
   nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
   nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
