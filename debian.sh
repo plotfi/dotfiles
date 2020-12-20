@@ -5,3 +5,6 @@ sudo apt install cmake ninja-build clang clang-format clangd clang-tidy lldb lld
 
 # handy console tools
 sudo apt install ripgrep htop net-tools di tig
+
+# other
+sudo apt install barrier
