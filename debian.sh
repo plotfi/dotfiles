@@ -14,3 +14,6 @@ sudo apt install barrier gparted openssh-server
 
 # git/vscode auth WA for Kubuntu
 sudo apt install gnome-keyring
+
+# rust + cargo
+sudo apt install cargo
