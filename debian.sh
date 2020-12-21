@@ -3,6 +3,9 @@
 # essential dev tools
 sudo apt install cmake ninja-build clang clang-format clangd clang-tidy lldb lld vim tmux git
 
+# build deps
+sudo apt install python3-distutils 
+
 # handy console tools
 sudo apt install ripgrep htop net-tools di tig
 
