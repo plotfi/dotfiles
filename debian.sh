@@ -11,3 +11,6 @@ sudo apt install ripgrep htop net-tools di tig
 
 # other
 sudo apt install barrier gparted openssh-server
+
+# git/vscode auth WA for Kubuntu
+sudo apt install gnome-keyring
