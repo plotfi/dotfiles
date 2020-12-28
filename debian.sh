@@ -20,3 +20,6 @@ sudo apt install cargo
 
 # Docker (The Debian/Ubuntu Distributed One) and Virt-Manager+KVM+QEMU
 sudo apt install docker.io virt-manager
+
+# For Formating nvme dev drives
+sudo apt install gparted
