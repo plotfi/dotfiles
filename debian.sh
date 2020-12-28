@@ -23,3 +23,6 @@ sudo apt install docker.io virt-manager
 
 # For Formating nvme dev drives
 sudo apt install gparted
+
+# Password Management
+sudo apt install keepassxc
