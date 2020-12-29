@@ -17,8 +17,6 @@ sudo apt install -y ripgrep fd-find htop net-tools di tig expect wget curl
 # remoting etc
 sudo apt install -y barrier gparted openssh-server x11vnc mosh
 
-
-
 # rust + cargo
 sudo apt install -y cargo
 
