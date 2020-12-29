@@ -26,3 +26,6 @@ sudo apt install gparted
 
 # Password Management
 sudo apt install keepassxc
+
+# Add the following to /ets/fstab for nvme mount:
+# LABEL=FastBoy                             /mnt/FastBoy    ext4    defaults          0       0
