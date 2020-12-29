@@ -9,4 +9,4 @@
 brew install ninja clang-format tmux
 
 # handy console tools
-brew install ripgrep fd-find htop di tig expect wget
+brew install ripgrep htop di tig expect wget
