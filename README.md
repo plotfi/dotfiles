@@ -7,8 +7,5 @@ cd dotfiles
 bash ./setup.sh
 
 # Debian/Ubuntu
-sudo apt update
-sudo apt -y dist-upgrade
-sudo apt install -y git gparted
 bash ./debian.sh
 ```
