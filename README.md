@@ -8,7 +8,7 @@ bash ./setup.sh
 
 # Debian/Ubuntu
 sudo apt update
-sudo apt dist-upgrade
-sudo apt install git gparted
+sudo apt -y dist-upgrade
+sudo apt install -y git gparted
 bash ./debian.sh
 ```
