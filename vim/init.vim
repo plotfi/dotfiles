@@ -91,13 +91,6 @@ if ((v:version > 750) || has('nvim')) && isdirectory($HOME.'/.vim/plugins/Langua
   nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 endif
 
-" If we bothered to install nvim and clone deoplete, enable it.
-" I find auto-complete a little annoying so I keep it out of regular vim.
-if has('nvim') && isdirectory($HOME.'/.vim/plugins/deoplete.nvim/')
-  set runtimepath+=~/.vim/plugins/deoplete.nvim/
-  let g:deoplete#enable_at_startup = 1
-endif
-
 " The rest is enabling llvm and tablegen syntax highlighting:
 augroup filetype
   au! BufRead,BufNewFile *.ll set filetype=llvm
@@ -105,9 +98,5 @@ augroup END
 
 augroup filetype
   au! BufRead,BufNewFile *.td set filetype=tablegen
-augroup END
-
-augroup filetype
- au! BufRead,BufNewFile *.rst set filetype=rest
 augroup END
 
