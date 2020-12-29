@@ -12,13 +12,12 @@ sudo apt install -y cmake ninja-build clang clang-format clangd clang-tidy lldb 
 sudo apt install -y python3-distutils 
 
 # handy console tools
-sudo apt install -y ripgrep htop net-tools di tig expect wget curl
+sudo apt install -y ripgrep fd-find htop net-tools di tig expect wget curl
 
 # remoting etc
 sudo apt install -y barrier gparted openssh-server x11vnc mosh
 
-# git/vscode auth WA for Kubuntu
-sudo apt install -y gnome-keyring
+
 
 # rust + cargo
 sudo apt install -y cargo
@@ -28,6 +27,9 @@ if [ -d /mnt/c ]; then
   echo "Early exit for WSL2..."
   exit 0
 fi
+
+# git/vscode auth WA for Kubuntu
+sudo apt install -y gnome-keyring
 
 # Docker (The Debian/Ubuntu Distributed One) and Virt-Manager+KVM+QEMU
 sudo apt install -y docker.io virt-manager
