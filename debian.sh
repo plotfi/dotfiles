@@ -7,7 +7,7 @@ sudo apt install cmake ninja-build clang clang-format clangd clang-tidy lldb lld
 sudo apt install python3-distutils 
 
 # handy console tools
-sudo apt install ripgrep htop net-tools di tig expect
+sudo apt install ripgrep htop net-tools di tig expect wget curl
 
 # remoting etc
 sudo apt install barrier gparted openssh-server x11vnc
