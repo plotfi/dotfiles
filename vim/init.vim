@@ -91,6 +91,10 @@ if ((v:version > 750) || has('nvim')) && isdirectory($HOME.'/.vim/plugins/Langua
   nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 endif
 
+if isdirectory($HOME.'/.vim/plugins/ctrlp.vim')
+  set runtimepath^=~/.vim/plugins/ctrlp.vim
+endif
+
 " The rest is enabling llvm and tablegen syntax highlighting:
 augroup filetype
   au! BufRead,BufNewFile *.ll set filetype=llvm
