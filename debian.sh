@@ -15,7 +15,7 @@ sudo apt install -y python3-distutils
 sudo apt install -y ripgrep htop net-tools di tig expect wget curl
 
 # remoting etc
-sudo apt install -y barrier gparted openssh-server x11vnc
+sudo apt install -y barrier gparted openssh-server x11vnc mosh
 
 # git/vscode auth WA for Kubuntu
 sudo apt install -y gnome-keyring
