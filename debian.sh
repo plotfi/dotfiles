@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Update + Requirements
+sudo apt update
+sudo apt -y dist-upgrade
+sudo apt install -y git gparted
+
 # essential dev tools
 sudo apt install -y cmake ninja-build clang clang-format clangd clang-tidy lldb lld vim tmux git
 
