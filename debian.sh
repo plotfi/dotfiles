@@ -23,6 +23,12 @@ sudo apt install -y gnome-keyring
 # rust + cargo
 sudo apt install -y cargo
 
+# Lame early exist for Linux virtualization and GUI apps in the presence of WSL2.
+if [ -d /mnt/c ]; then
+  echo "Early exit for WSL2..."
+  exit 0
+fi
+
 # Docker (The Debian/Ubuntu Distributed One) and Virt-Manager+KVM+QEMU
 sudo apt install -y docker.io virt-manager
 
