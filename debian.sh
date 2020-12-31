@@ -31,6 +31,7 @@ sudo apt install -y gnome-keyring
 
 # Docker (The Debian/Ubuntu Distributed One) and Virt-Manager+KVM+QEMU
 sudo apt install -y docker.io virt-manager
+sudo usermod -aG docker $USER
 
 # For Formating nvme dev drives
 sudo apt install -y gparted
