@@ -47,5 +47,9 @@ sudo apt install -y apt-transport-https
 sudo apt update
 sudo apt install -y code-insiders
 
+# Add the following to /etc/sysctl.conf
+# fs.inotify.max_user_watches=524288
+# sudo sysctl -p
+
 # Add the following to /ets/fstab for nvme mount:
 # LABEL=FastBoy                             /mnt/FastBoy    ext4    defaults          0       0
