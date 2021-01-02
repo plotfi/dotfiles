@@ -4,6 +4,11 @@
 echo "Beware, this script will remove or modify your dotfiles."
 read
 
+if [ -e ~/.gitconfig ]; then
+  echo "~/.gitconfig directory exists, bailing"
+  exit 0
+fi
+
 cd `dirname "$0"`
 
 #####################
