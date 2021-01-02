@@ -29,7 +29,7 @@ cat gitconfig >> ~/.gitconfig
 #####################
 ##    Setup Vim    ##
 #####################
-echo "Beware... About to `rm -rf ~/.vim ~/.vimrc` and replace vimrc files..."
+echo "Beware... About to 'rm -rf ~/.vim ~/.vimrc' and replace vimrc files..."
 echo "Press Enter to Continue..."
 read
 
