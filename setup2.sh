@@ -24,10 +24,20 @@ cat gitconfig >> ~/.gitconfig
 #####################
 ##    Setup Vim    ##
 #####################
-echo "Beware... About to `rm -f ~/.vim ~/.vimrc` and replace vimrc files..."
+echo "Beware... About to `rm -rf ~/.vim ~/.vimrc` and replace vimrc files..."
 echo "Press Enter to Continue..."
 read
-rm -f ~/.vim ~/.vimrc
+
+if [ -e ~/.vim ]; then
+  echo "~/.vim directory exists, bailing"
+  exit 0
+fi
+
+if [ -e ~/.vimrc ]; then
+  echo "~/.vimrc exists, bailing"
+  exit 0
+fi
+
 cp -r $(pwd)/vim ~/.vim
 cp -r $(pwd)/vim/init.vim ~/.vimrc
 #####################
