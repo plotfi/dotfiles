@@ -29,8 +29,8 @@ set $mod Mod4
 font pango:DejaVu Sans 10
 # font pango:Helvetica Neue, FontAwesome 8
 
-exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-fill ~/Documents/post-war_moral_new_world_order.jpg
+# exec --no-startup-id nm-applet
+# exec --no-startup-id feh --bg-fill ~/Documents/post-war_moral_new_world_order.jpg
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
