@@ -56,8 +56,13 @@ if !has('nvim')
 endif
 
 " Our favorite colorscheme is muon, based on the only good thing to come out
-" of Emacs: Charcoal Black.
-colorscheme muon
+" of Emacs: Charcoal Black. If it isn't available, fall back to our colege
+" favorite: elflord.
+try
+  colorscheme muon
+catch
+  colorscheme elflord
+endtry
 filetype plugin indent on
 syntax on
 
