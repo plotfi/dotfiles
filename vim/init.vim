@@ -109,3 +109,7 @@ augroup filetype
   au! BufRead,BufNewFile *.td set filetype=tablegen
 augroup END
 
+augroup filetype
+  au! BufRead,BufNewFile *.swift set filetype=swift
+augroup END
+
