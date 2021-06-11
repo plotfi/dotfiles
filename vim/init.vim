@@ -33,7 +33,6 @@ set exrc
 " Indent the llvm way.
 set expandtab
 set autoindent
-set cindent
 set smartindent
 set backspace=2
 set laststatus=2
@@ -61,7 +60,12 @@ try
 catch
   colorscheme elflord
 endtry
-filetype plugin indent on
+
+" ---- Filetypes ----
+filetype on                 " detect filetype by extensions
+filetype indent on          " enable indents based on extensions
+filetype plugin on          " load filetype plugins
+
 syntax on
 
 " ctrl-c does not behave the same across modes to allow for killing background jobs.
@@ -92,6 +96,13 @@ if ((v:version > 750) || has('nvim')) && isdirectory($HOME.'/.vim/plugins/Langua
   nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
   nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 endif
+ 
+" if has('nvim')
+"   if isdirectory($HOME.'/.vim/plugins/deoplete.nvim/')
+"     set runtimepath+=~/.vim/plugins/deoplete.nvim/
+"     let g:deoplete#enable_at_startup = 1
+"   endif
+" endif
 
 if isdirectory($HOME.'/.vim/plugins/ctrlp.vim')
   set runtimepath^=~/.vim/plugins/ctrlp.vim
