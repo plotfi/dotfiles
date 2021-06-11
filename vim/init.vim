@@ -96,13 +96,6 @@ if ((v:version > 750) || has('nvim')) && isdirectory($HOME.'/.vim/plugins/Langua
   nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
   nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 endif
- 
-" if has('nvim')
-"   if isdirectory($HOME.'/.vim/plugins/deoplete.nvim/')
-"     set runtimepath+=~/.vim/plugins/deoplete.nvim/
-"     let g:deoplete#enable_at_startup = 1
-"   endif
-" endif
 
 if isdirectory($HOME.'/.vim/plugins/ctrlp.vim')
   set runtimepath^=~/.vim/plugins/ctrlp.vim
