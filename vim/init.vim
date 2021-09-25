@@ -79,7 +79,11 @@ map <LocalLeader><left>  :hide bp<CR>
 map <LocalLeader><down>  :hide bd<CR>
 map <LocalLeader>m :make -C build<CR>
 
-" Just clang-format using the available Python
+let g:netrw_preview   = 1
+let g:netrw_liststyle = 3
+let g:netrw_winsize   = 30
+
+" Just run my clang format using the available python, don't care which.
 if has('python3')
   map <C-K> :py3f ~/.vim/plugins/clang-format.py<cr>
 else
@@ -97,8 +101,31 @@ if ((v:version > 750) || has('nvim')) && isdirectory($HOME.'/.vim/plugins/Langua
   nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 endif
 
-if isdirectory($HOME.'/.vim/plugins/ctrlp.vim')
-  set runtimepath^=~/.vim/plugins/ctrlp.vim
+if isdirectory($HOME.'/.vim/plugins/fzf')
+  set runtimepath^=~/.vim/plugins/fzf
+  nnoremap <Leader>f :FZF<CR>
+endif
+
+if isdirectory($HOME.'/.vim/plugins/ack.vim')
+  set runtimepath^=~/.vim/plugins/ack.vim
+
+  let g:ackprg = 'rg --vimgrep --type-not sql --smart-case'
+
+  " Auto close the Quickfix list after pressing '<enter>' on a list item
+  " let g:ack_autoclose = 1
+
+  " Any empty ack search will search for the work the cursor is on
+  let g:ack_use_cword_for_empty_search = 1
+
+  " Don't jump to first match
+  cnoreabbrev Ack Ack!
+
+  " Maps <leader>/ so we're ready to type the search keyword
+  nnoremap <Leader>/ :Ack!<Space>
+
+  " Navigate quickfix list with ease
+  " nnoremap <silent> [q :cprevious<CR>
+  " nnoremap <silent> ]q :cnext<CR>
 endif
 
 " Syntax highlighting for Swift LLVM and TableGen
