@@ -103,29 +103,17 @@ endif
 
 if isdirectory($HOME.'/.vim/plugins/fzf')
   set runtimepath^=~/.vim/plugins/fzf
+  set runtimepath^=~/.vim/plugins/fzf.vim
   nnoremap <Leader>f :FZF<CR>
 endif
 
-if isdirectory($HOME.'/.vim/plugins/ack.vim')
-  set runtimepath^=~/.vim/plugins/ack.vim
-
-  let g:ackprg = 'rg --vimgrep --type-not sql --smart-case'
-
-  " Auto close the Quickfix list after pressing '<enter>' on a list item
-  " let g:ack_autoclose = 1
-
-  " Any empty ack search will search for the work the cursor is on
-  let g:ack_use_cword_for_empty_search = 1
-
-  " Don't jump to first match
-  cnoreabbrev Ack Ack!
-
-  " Maps <leader>/ so we're ready to type the search keyword
-  nnoremap <Leader>/ :Ack!<Space>
-
-  " Navigate quickfix list with ease
-  " nnoremap <silent> [q :cprevious<CR>
-  " nnoremap <silent> ]q :cnext<CR>
+if isdirectory($HOME.'/.vim/plugins/fzf.vim')
+  set runtimepath^=~/.vim/plugins/fzf.vim
+  nnoremap <Leader>p :Rg<CR>
+  command! -bang -nargs=* Rg
+        \ call fzf#vim#grep(
+        \   'rg --column --line-number --no-heading --color=always --smart-case --no-ignore-parent -- '.shellescape(<q-args>), 1,
+        \   fzf#vim#with_preview(), <bang>0)
 endif
 
 " Syntax highlighting for Swift LLVM and TableGen
